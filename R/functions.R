@@ -4,7 +4,9 @@
 #' @param b Longueur d'un côté du triangle
 #' @param c Longueur d'un côté du triangle
 #' @return Le demi périmètre du triangle
+#' @export
 #' @noRd
+#'
 #'
 demi_perimetre <- function(a, b, c) {
   (a + b + c) / 2
@@ -19,7 +21,7 @@ demi_perimetre <- function(a, b, c) {
 #' @examples
 #' heron(3, 4, 5)
 #' heron(6, 8, 10)
-#'
+#' @export
 heron <- function(a, b, c) {
   if (!is.numeric(a) || !is.numeric(b) || !is.numeric(c)) {
     stop("Tous les arguments doivent être des nombres.")
@@ -107,5 +109,26 @@ if (inherits(try(heron(a, b, val_non_num)), "try-error")) {
 }
 
 
+# Question 11 : Lorsque j'exécute la commande remotes::install_github("Bouedo/heron"), le paquet "heron" est installé à partir du dépôt GitHub "Bouedo/heron".
+
+
+### Heron 2, pour la question 11 de post de blog.
+#' @title heron2
+#' @description Cette fonction calcule la somme des aires de triangles dans une liste de triangles en utilisant la formule d'Heron.
+#' @param list_triangle Une liste de triangles, où chaque triangle est défini par ses coordonnées (x, y).
+#' @return La somme des aires des triangles dans la liste de triangles.
+#' @export
+#'
+heron2 <- function(list_triangle) {
+  triangle_areas <- sapply(list_triangle, function(triangle) {
+    # Calculation of area using Heron's formula
+    a <- dist(triangle[1:2,])
+    b <- dist(triangle[2:3,])
+    c <- dist(triangle[3:1,])
+    s <- (a + b + c)/2
+    sqrt(s * (s-a) * (s-b) * (s-c))
+  })
+  sum(triangle_areas)
+}
 
 

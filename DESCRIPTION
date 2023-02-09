@@ -1,12 +1,9 @@
 Package: heron
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Heron,calculate the area of a triangle
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Bouedo
+Description: The heron function is a mathematical function used to calculate the area of a triangle by knowing the length of its sides. This function uses a formula known as "Heron's formula"
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3

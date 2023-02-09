@@ -22,5 +22,4 @@ Calcule l'aire d'un triangle à partir de ses côtés
 \examples{
 heron(3, 4, 5)
 heron(6, 8, 10)
-
 }
